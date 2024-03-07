@@ -23,6 +23,15 @@ class Users extends Component {
     })
   }
 
+  componentDidUpdate() {
+    if (this.props.users.length === 0) {
+      // an artificial error
+      // to emulate an Error Boundaries case
+      // the handler is in the ErrorBoundary.jsx file
+      throw new Error('No user provided')
+    }
+  }
+
   render() {
     const usersList = (
       <ul>
