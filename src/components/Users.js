@@ -1,12 +1,6 @@
-import { Component, useState } from 'react'
+import { Component } from 'react'
 import User from './User'
 import classes from './Users.module.css'
-
-const USERS_MOCK = [
-  { id: 'u1', name: 'Luna' },
-  { id: 'u2', name: 'Max' },
-  { id: 'u3', name: 'Cris' },
-]
 
 class Users extends Component {
   constructor() {
@@ -32,7 +26,8 @@ class Users extends Component {
   render() {
     const usersList = (
       <ul>
-        {USERS_MOCK.map((user) => (
+        {/* props are accessible through this.props method */}
+        {this.props.users.map((user) => (
           <User key={user.id} name={user.name} />
         ))}
       </ul>
